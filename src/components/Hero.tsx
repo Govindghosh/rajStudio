@@ -1,147 +1,95 @@
-import { useState, useEffect } from 'react';
-import { Play, Music, Guitar, Mic, Star, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import heroImage from '@/assets/hero-performance.jpg';
+import { useState, useEffect } from "react";
+import { Play, Guitar, Mic, Star, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import heroImage from "@/assets/hero-performance.jpg";
+import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 
 const Hero = () => {
-  const [typewriterText, setTypewriterText] = useState('');
-  const fullText = "Learn Guitar & Vocal Music with the Melody Workshop Team";
+  const words = [
+    {
+      text: "Melody",
+      className: "text-text-white dark:text-white",
+    },
 
-  useEffect(() => {
-    let i = 0;
-    const timer = setInterval(() => {
-      if (i < fullText.length) {
-        setTypewriterText(fullText.slice(0, i + 1));
-        i++;
-      } else {
-        clearInterval(timer);
-      }
-    }, 100);
-
-    return () => clearInterval(timer);
-  }, []);
+    {
+      text: "Workshop",
+      className: "text-[#FACC15] dark:text-[#FACC15]",
+    },
+  ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Image with Overlay */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
+      {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Melody Workshop Team performing"
-          className="w-full h-full object-cover"
+          alt="Melody Workshop performing"
+          className="w-full h-full object-cover brightness-75"
         />
-        <div className="absolute inset-0 hero-stage opacity-80"></div>
-      </div>
-
-      {/* Floating Musical Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-20 music-note-float">
-          <Music className="h-6 w-6 text-musical-gold opacity-60" />
-        </div>
-        <div className="absolute top-40 right-32 music-note-float" style={{ animationDelay: '1s' }}>
-          <Guitar className="h-8 w-8 text-musical-blue opacity-50" />
-        </div>
-        <div className="absolute bottom-32 left-16 music-note-float" style={{ animationDelay: '2s' }}>
-          <Mic className="h-7 w-7 text-musical-purple opacity-55" />
-        </div>
-
-        <div className="absolute bottom-20 right-20 flex space-x-1">
-          {[...Array(8)].map((_, i) => (
-            <div
-              key={i}
-              className="w-1 bg-musical-gold sound-wave-bar"
-              style={{
-                height: `${Math.random() * 40 + 20}px`,
-                animationDelay: `${i * 0.2}s`
-              }}
-            />
-          ))}
-        </div>
-
-        <div className="stage-spotlight absolute inset-0"></div>
       </div>
 
       {/* Main Content */}
-      <div className="container-musical relative z-10 text-center text-white">
-        <div className="max-w-4xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 mb-8 border border-white/20">
-            <Star className="h-4 w-4 text-musical-gold" />
-            <span className="text-sm font-medium">Professional Music Instructors</span>
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-0 max-w-4xl mx-auto">
+        {/* Badge */}
+        <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md rounded-full px-3 py-1 mb-6 border border-white/20 text-sm">
+          <Star className="h-4 w-4 text-yellow-400" />
+          <span>Professional Music Instructors</span>
+        </div>
+
+        {/* Heading */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-center">
+          Learn Guitar & Vocal Music with the Melody Workshop
+          <div className="flex justify-center">
+            {/* <TypewriterEffectSmooth words={words} /> */}
           </div>
+        </h1>
 
-          {/* Main Heading with Typewriter Effect */}
-          <div className="w-full max-w-4xl h-[100px] md:h-[140px] lg:h-[160px]">
-          <h1 className="font-musical text-3xl md:text-4xl lg:text-4xl font-bold mb-6">
-            <span className="inline-block overflow-hidden border-r-2 border-musical-gold">
-              {typewriterText}
-            </span>
-          </h1>
+        {/* Subheading */}
+        <p className="text-white/90 text-base sm:text-lg md:text-xl mb-8 leading-relaxed">
+          Personalized lessons from experienced instructors.
+          <br className="hidden sm:block" />
+          Unlock your musical potential with the Melody Workshop.
+        </p>
+
+        {/* Call-to-Action */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <Button className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-yellow-500 transition">
+            <span>Book a Free Trial</span>
+            <ArrowRight className="h-4 w-4" />
+          </Button>
+          <Button className="bg-white/10 backdrop-blur-md text-white px-6 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-white/20 transition">
+            <Play className="h-4 w-4" />
+            <span>Watch Demo</span>
+          </Button>
+        </div>
+
+        {/* Statistics */}
+        <div className="flex flex-wrap justify-center gap-6 text-white/90">
+          <div className="text-center">
+            <div className="text-2xl sm:text-3xl font-bold text-yellow-400">
+              200+
+            </div>
+            <div className="text-sm sm:text-base">Students Taught</div>
           </div>
-
-          {/* Subheading */}
-          <p className="text-xl md:text-2xl mb-8 text-white/90 font-light leading-relaxed">
-            Transform your musical journey with personalized lessons from our experienced instructors.
-            <br className="hidden md:block" />
-            From beginner to professional, unlock your musical potential with the Melody Workshop Team.
-          </p>
-
-          {/* Statistics */}
-          <div className="flex flex-wrap justify-center gap-8 mb-12">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-musical-gold">500+</div>
-              <div className="text-sm text-white/80">Students Taught</div>
+          <div className="text-center">
+            <div className="text-2xl sm:text-3xl font-bold text-yellow-400">
+              10+
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-musical-gold">10+</div>
-              <div className="text-sm text-white/80">Years Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-musical-gold">95%</div>
-              <div className="text-sm text-white/80">Success Rate</div>
-            </div>
+            <div className="text-sm sm:text-base">Years Experience</div>
           </div>
-
-          {/* Call to Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button className="btn-hero text-lg px-8 py-4 group">
-              <span>Book a Free Trial Lesson</span>
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              className="bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 text-lg px-8 py-4 group"
-            >
-              <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-              <span>Watch Team Demo</span>
-            </Button>
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="mt-12 flex flex-wrap justify-center items-center gap-6 text-sm text-white/70">
-            <div className="flex items-center space-x-1">
-              <Star className="h-4 w-4 text-musical-gold fill-current" />
-              <span>Certified Instructors</span>
+          <div className="text-center">
+            <div className="text-2xl sm:text-3xl font-bold text-yellow-400">
+              95%
             </div>
-            <div className="flex items-center space-x-1">
-              <Music className="h-4 w-4 text-musical-blue" />
-              <span>All Skill Levels</span>
-            </div>
-            <div className="flex items-center space-x-1">
-              <Guitar className="h-4 w-4 text-musical-purple" />
-              <span>Flexible Scheduling</span>
-            </div>
+            <div className="text-sm sm:text-base">Success Rate</div>
           </div>
         </div>
       </div>
 
-      {/* Bottom scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
-          </div>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-5 h-10 border-2 border-white/50 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>

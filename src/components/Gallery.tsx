@@ -16,7 +16,7 @@ const Gallery = () => {
       description: 'Performing at the Annual Music Festival 2023',
       date: 'December 2023',
       location: 'City Music Hall',
-      attendees: '500+',
+      attendees: '200+',
       image: '/placeholder.svg',
       tags: ['Live Performance', 'Guitar', 'Concert']
     },
