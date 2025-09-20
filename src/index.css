@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Music-inspired Design System for Raj Agrawal's Portfolio */
+
+@layer base {
+  :root {
+    /* Base Colors - Light Mode */
+    --background: 45 20% 98%;
+    --foreground: 220 15% 15%;
+
+    /* Musical Accent Colors */
+    --musical-gold: 45 85% 60%;
+    --musical-gold-light: 45 95% 75%;
+    --musical-blue: 220 85% 35%;
+    --musical-blue-light: 220 75% 65%;
+    --musical-purple: 280 65% 55%;
+    --stage-light: 60 100% 85%;
+
+    /* Card & Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+    --card-hover: 45 25% 96%;
+
+    /* Interactive Elements */
+    --primary: 220 85% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 220 85% 25%;
+
+    --secondary: 45 85% 60%;
+    --secondary-foreground: 220 15% 15%;
+    --secondary-hover: 45 85% 50%;
+
+    --accent: 280 65% 55%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 280 65% 45%;
+
+    /* Neutral Elements */
+    --muted: 45 15% 94%;
+    --muted-foreground: 220 10% 45%;
+    --border: 45 20% 88%;
+    --input: 45 20% 88%;
+    --ring: 220 85% 35%;
+
+    /* Music-specific gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 85% 35%) 0%, hsl(280 65% 55%) 100%);
+    --gradient-stage: linear-gradient(180deg, hsl(220 20% 8%) 0%, hsl(280 30% 15%) 100%);
+    --gradient-spotlight: radial-gradient(circle at center, hsl(60 100% 85% / 0.3) 0%, transparent 70%);
+    --gradient-sound-wave: linear-gradient(90deg, hsl(45 85% 60%) 0%, hsl(280 65% 55%) 50%, hsl(220 85% 35%) 100%);
+
+    /* Shadows & Effects */
+    --shadow-glow: 0 0 30px hsl(var(--musical-gold) / 0.3);
+    --shadow-stage: 0 20px 60px -10px hsl(220 20% 8% / 0.4);
+    --shadow-card: 0 4px 20px hsl(220 15% 15% / 0.08);
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Base Colors - Dark Mode */
+    --background: 220 20% 8%;
+    --foreground: 45 20% 95%;
+
+    /* Enhanced Musical Colors for Dark Mode */
+    --musical-gold: 45 95% 70%;
+    --musical-gold-light: 45 100% 80%;
+    --musical-blue: 220 85% 65%;
+    --musical-blue-light: 220 75% 75%;
+    --stage-light: 60 100% 90%;
+
+    /* Card & Surface Colors */
+    --card: 220 25% 12%;
+    --card-foreground: 45 20% 95%;
+    --card-hover: 220 25% 16%;
+
+    /* Interactive Elements */
+    --primary: 45 95% 70%;
+    --primary-foreground: 220 20% 8%;
+    --primary-hover: 45 95% 80%;
+
+    --secondary: 220 85% 65%;
+    --secondary-foreground: 220 20% 8%;
+    --secondary-hover: 220 85% 75%;
+
+    --accent: 280 75% 65%;
+    --accent-foreground: 220 20% 8%;
+    --accent-hover: 280 75% 75%;
+
+    /* Neutral Elements */
+    --muted: 220 20% 15%;
+    --muted-foreground: 45 10% 65%;
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 45 95% 70%;
+
+    /* Enhanced gradients for dark mode */
+    --gradient-hero: linear-gradient(135deg, hsl(220 25% 12%) 0%, hsl(280 30% 20%) 100%);
+    --gradient-stage: linear-gradient(180deg, hsl(220 20% 8%) 0%, hsl(280 30% 12%) 100%);
+    --gradient-spotlight: radial-gradient(circle at center, hsl(60 100% 90% / 0.2) 0%, transparent 70%);
+    --gradient-sound-wave: linear-gradient(90deg, hsl(45 95% 70%) 0%, hsl(280 75% 65%) 50%, hsl(220 85% 65%) 100%);
+
+    /* Enhanced shadows for dark mode */
+    --shadow-glow: 0 0 40px hsl(var(--musical-gold) / 0.4);
+    --shadow-stage: 0 20px 60px -10px hsl(220 20% 2% / 0.6);
+    --shadow-card: 0 4px 20px hsl(220 20% 2% / 0.3);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Musical Typography */
+  .font-musical {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  /* Music-inspired animations */
+  @keyframes float-note {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+  }
+
+  @keyframes sound-wave {
+    0%, 100% { transform: scaleY(0.5); opacity: 0.7; }
+    50% { transform: scaleY(1); opacity: 1; }
+  }
+
+  @keyframes vinyl-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes stage-glow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+  }
+
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes cursor-blink {
+    from, to { border-color: transparent; }
+    50% { border-color: hsl(var(--musical-gold)); }
+  }
+
+  /* Musical component classes */
+  .music-note-float {
+    animation: float-note 3s ease-in-out infinite;
+  }
+
+  .sound-wave-bar {
+    animation: sound-wave 1.5s ease-in-out infinite;
+  }
+
+  .vinyl-record {
+    animation: vinyl-spin 10s linear infinite;
+  }
+
+  .stage-spotlight {
+    background: var(--gradient-spotlight);
+    animation: stage-glow 4s ease-in-out infinite;
+  }
+
+  .typewriter-text {
+    overflow: hidden;
+    border-right: 3px solid hsl(var(--musical-gold));
+    white-space: nowrap;
+    animation: typewriter 3s steps(40, end), cursor-blink 1s infinite;
+  }
+
+  /* Hero section with stage background */
+  .hero-stage {
+    background: var(--gradient-stage);
+    position: relative;
+  }
+
+  .hero-stage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-spotlight);
+    pointer-events: none;
+  }
+
+  /* Card variants */
+  .card-musical {
+    @apply bg-card border border-border rounded-xl shadow-lg;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+  }
+
+  .card-musical:hover {
+    @apply bg-card-hover;
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-4px);
+  }
+
+  /* Button variants */
+  .btn-hero {
+    @apply inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300;
+    background: var(--gradient-hero);
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 40px hsl(var(--musical-gold) / 0.5);
+  }
+
+  .btn-secondary-musical {
+    @apply inline-flex items-center justify-center px-6 py-3 font-medium rounded-lg;
+    @apply bg-secondary text-secondary-foreground;
+    @apply hover:bg-secondary-hover transition-all duration-300;
+  }
+
+  .btn-secondary-musical:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Text effects */
+  .text-gradient-musical {
+    background: var(--gradient-sound-wave);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-20 px-4 md:px-8 lg:px-12;
+  }
+
+  /* Container */
+  .container-musical {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
