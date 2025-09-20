@@ -96,7 +96,7 @@ export default function Testimonials() {
         <div className="flex items-center justify-center space-x-4 mb-12">
           {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 text-musical-gold fill-current" />)}
           <span className="text-2xl font-bold text-gradient-musical">4.9/5</span>
-          <span className="text-muted-foreground">from 500+ students</span>
+          <span className="text-muted-foreground">from 200+ students</span>
         </div>
 
         <div className="relative mb-16">
@@ -142,7 +142,7 @@ export default function Testimonials() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-          <div className="text-center"><div className="text-3xl font-bold text-gradient-musical mb-1">500+</div><div className="text-sm text-muted-foreground">Happy Students</div></div>
+          <div className="text-center"><div className="text-3xl font-bold text-gradient-musical mb-1">200+</div><div className="text-sm text-muted-foreground">Happy Students</div></div>
           <div className="text-center"><div className="text-3xl font-bold text-gradient-musical mb-1">4.9/5</div><div className="text-sm text-muted-foreground">Average Rating</div></div>
           <div className="text-center"><div className="text-3xl font-bold text-gradient-musical mb-1">95%</div><div className="text-sm text-muted-foreground">Success Rate</div></div>
           <div className="text-center"><div className="text-3xl font-bold text-gradient-musical mb-1">10+</div><div className="text-sm text-muted-foreground">Years Teaching</div></div>

@@ -2,8 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
-  prefix: "",
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -51,7 +55,6 @@ export default {
           foreground: "hsl(var(--card-foreground))",
           hover: "hsl(var(--card-hover))",
         },
-        // Musical-specific colors
         musical: {
           gold: "hsl(var(--musical-gold))",
           "gold-light": "hsl(var(--musical-gold-light))",
@@ -74,7 +77,6 @@ export default {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
         musical: ["Playfair Display", "serif"],
-        inter: ["Inter", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -83,25 +85,21 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        scroll: {
+          to: { transform: "translate(calc(-50% - 0.5rem))" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
     },
   },

@@ -42,14 +42,14 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Courses", href: "#courses" },
-    { name: "Talents", href: "#talents" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Blog", href: "#blog" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    // { name: "About", href: "#about" },
+    { name: "Courses", href: "/course" },
+    // { name: "Talents", href: "#talents" },
+    // { name: "Gallery", href: "#gallery" },
+    // { name: "Testimonials", href: "#testimonials" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -65,15 +65,20 @@ const Navbar = () => {
       <div className="container-musical">
         <div className="flex items-center justify-between h-16 px-4">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="p-2 bg-primary rounded-lg">
-              <Music className="h-6 w-6 text-primary-foreground" />
+          <a href="/">
+            <div className="flex items-center space-x-2">
+              <div className="p-2 bg-primary rounded-lg">
+                <img
+                  src="/favicon.ico"
+                  alt="Melody Workshop Logo"
+                  className="h-6 w-6 object-contain"
+                />
+              </div>
+              <div className="font-musical text-xl font-bold text-gradient-musical">
+                Melody Workshop
+              </div>
             </div>
-            <div className="font-musical text-xl font-bold text-gradient-musical">
-              Melody Workshop
-            </div>
-          </div>
-
+          </a>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (

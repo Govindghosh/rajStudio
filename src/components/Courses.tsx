@@ -210,7 +210,7 @@ const Courses = () => {
             </div>
             <div className="flex items-center space-x-2">
               <Users className="h-4 w-4 text-musical-blue" />
-              <span>500+ Happy Students</span>
+              <span>200+ Happy Students</span>
             </div>
           </div>
         </div>
