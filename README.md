@@ -1,22 +1,24 @@
-# Welcome to your Lovable project
+# Welcome to your project
+
+This project was created by **Govind Ghosh** and **Kumar Ujjwal**.
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/be0f8180-563b-48d4-98ed-ed4528de1129
+A modern web application for creative studios, built with React and Vite.
+
+**URL**: https://rajstudio-psi.vercel.app/
+
+## Authors
+
+This project was created by **Govind Ghosh** and **Kumar Ujjwal**.
 
 ## How can I edit this code?
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/be0f8180-563b-48d4-98ed-ed4528de1129) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
+You can edit your application using your preferred IDE, GitHub, or GitHub Codespaces.
 
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+If you want to work locally using your own IDE, you can clone this repo and push changes.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -62,12 +64,10 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/be0f8180-563b-48d4-98ed-ed4528de1129) and click on Share -> Publish.
+Deploy using your preferred platform (e.g., Vercel, Netlify, etc.).
 
-## Can I connect a custom domain to my Lovable project?
+## Can I connect a custom domain to my project?
 
 Yes, you can!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Refer to your deployment platform's documentation for connecting a custom domain.
