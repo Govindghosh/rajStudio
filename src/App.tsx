@@ -10,7 +10,7 @@ import Course from "./pages/Course";
 import Contact from "./pages/Contact";
 import Faq from "./pages/Faq";
 import Gallary from "./pages/Gallary";
-
+import WhatsAppButton from "./components/WhatsAppButton"; // 👈 import the button
 
 const queryClient = new QueryClient();
 
@@ -31,6 +31,9 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+
+      {/* ✅ Floating WhatsApp Button - shows on all pages */}
+      <WhatsAppButton />
     </TooltipProvider>
   </QueryClientProvider>
 );

@@ -1,4 +1,13 @@
-import { Music, Award, Users, Clock, Guitar, Mic } from "lucide-react";
+import {
+  Music,
+  Award,
+  Users,
+  Clock,
+  Guitar,
+  Mic,
+  MapPin,
+  Wallet,
+} from "lucide-react";
 
 const About = () => {
   const highlights = [
@@ -17,12 +26,13 @@ const About = () => {
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="font-musical text-4xl md:text-5xl font-bold mb-4">
-            About <span className="text-gradient-musical">Melody Workshop</span>
+            About Melody Workshop
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
-            Professional guitar & vocal training built for beginners to
-            performers. Learn from certified instructors with real stage
-            experience.
+            We believe that music is more than just practice - it's
+            self-expression, confidence, and joy. Founded by passionate
+            musicians, our academy is designed to bring structured, enjoyable,
+            and professional training to every student.
           </p>
         </div>
 
@@ -30,40 +40,85 @@ const About = () => {
         {/* Info + Visual */}
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Info */}
-          <div className="space-y-6 sm:space-y-8">
+          <div className="space-y-8 sm:space-y-10">
             <div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                Why Choose Us?
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+                Why Choose Melody Workshop?
               </h3>
-              <ul className="space-y-2 sm:space-y-3 text-gray-700 dark:text-gray-300">
-                <li className="flex items-center gap-2 sm:gap-3">
-                  <Guitar className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 dark:text-indigo-400" />
-                  Certified Guitar & Vocal Instructors
+              <ul className="grid gap-6 sm:gap-8 sm:grid-cols-2">
+                <li className="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 dark:bg-gray-800/50 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-indigo-100 dark:bg-indigo-900">
+                    <Mic className="w-5 h-5 text-indigo-600 dark:text-indigo-300" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900 dark:text-gray-100">
+                      Expert Instructors
+                    </p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Learn from experienced teachers who know how to make
+                      lessons fun and effective.
+                    </p>
+                  </div>
                 </li>
-                <li className="flex items-center gap-2 sm:gap-3">
-                  <Music className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 dark:text-indigo-400" />
-                  Tailored learning for all skill levels
+
+                <li className="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 dark:bg-gray-800/50 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-indigo-100 dark:bg-indigo-900">
+                    <MapPin className="w-5 h-5 text-indigo-600 dark:text-indigo-300" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900 dark:text-gray-100">
+                      Learn From Anywhere
+                    </p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Online classes designed to fit into your schedule.
+                    </p>
+                  </div>
                 </li>
-                <li className="flex items-center gap-2 sm:gap-3">
-                  <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 dark:text-indigo-400" />
-                  Focus on performance & practical training
+
+                <li className="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 dark:bg-gray-800/50 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-indigo-100 dark:bg-indigo-900">
+                    <Users className="w-5 h-5 text-indigo-600 dark:text-indigo-300" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900 dark:text-gray-100">
+                      Small Batches
+                    </p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      More interaction and personalized attention for every
+                      student.
+                    </p>
+                  </div>
                 </li>
-                <li className="flex items-center gap-2 sm:gap-3">
-                  <Users className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 dark:text-indigo-400" />
-                  Online & in-person lessons available
+
+                <li className="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 dark:bg-gray-800/50 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-indigo-100 dark:bg-indigo-900">
+                    <Wallet className="w-5 h-5 text-indigo-600 dark:text-indigo-300" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900 dark:text-gray-100">
+                      Affordable Pricing
+                    </p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Quality training at reasonable rates with bundle
+                      discounts.
+                    </p>
+                  </div>
+                </li>
+
+                <li className="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 dark:bg-gray-800/50 shadow-sm hover:shadow-md transition-shadow sm:col-span-2">
+                  <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-indigo-100 dark:bg-indigo-900">
+                    <Music className="w-5 h-5 text-indigo-600 dark:text-indigo-300" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900 dark:text-gray-100">
+                      Performance Opportunities
+                    </p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Show your talent in online recitals & events.
+                    </p>
+                  </div>
                 </li>
               </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                Our Philosophy
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                We combine structured learning with real-world performance
-                practice. Our goal is simple: build confident, skilled, and
-                creative musicians.
-              </p>
             </div>
           </div>
 

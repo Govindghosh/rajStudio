@@ -5,70 +5,64 @@ import { Button } from '@/components/ui/button';
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Martinez",
-    role: "Beginner to Intermediate Guitarist",
+    name: "Rohan Mehta",
+    role: "Acoustic Guitar Student",
     course: "Guitar Mastery Course",
     rating: 5,
     instrument: Guitar,
-    color: "from-musical-gold to-orange-400",
-    quote: "The Melody Workshop team transformed my guitar skills. I went from never playing to confidently performing in just 4 months.",
-    achievement: "Performs at local venues",
+    color: "from-orange-400 to-amber-500",
+    quote:
+      "I never thought I’d be able to play guitar so quickly. The lessons are clear and motivating!",
+    achievement: "Plays acoustic sets at college events",
   },
   {
     id: 2,
-    name: "Michael Chen",
-    role: "Professional Singer",
-    course: "Vocal Excellence Program",
-    rating: 5,
-    instrument: Mic,
-    color: "from-musical-blue to-cyan-400",
-    quote: "The team’s guidance elevated my singing to a professional level with practical performance tips.",
-    achievement: "Signed with a record label",
-  },
-  {
-    id: 3,
-    name: "Emily Johnson",
-    role: "Complete Beginner",
-    course: "Complete Musician Package",
-    rating: 5,
-    instrument: Music,
-    color: "from-musical-purple to-pink-400",
-    quote: "I discovered a passion for music thanks to the team’s structured approach. I’m now writing my own songs!",
-    achievement: "Released debut EP",
-  },
-  {
-    id: 4,
-    name: "David Rodriguez",
-    role: "Returning Musician",
-    course: "Guitar Mastery Course",
-    rating: 5,
-    instrument: Guitar,
-    color: "from-green-500 to-emerald-400",
-    quote: "After years away from music, the team helped me surpass my previous skills and start a band.",
-    achievement: "Started a band",
-  },
-  {
-    id: 5,
-    name: "Amanda Wilson",
+    name: "Aditi Sharma",
     role: "Vocal Student",
     course: "Vocal Excellence Program",
     rating: 5,
     instrument: Mic,
-    color: "from-purple-500 to-indigo-400",
-    quote: "The team helped me find my voice and overcome stage fright. Their coaching improved my confidence and sound quality.",
-    achievement: "Performs at jazz clubs",
+    color: "from-pink-500 to-rose-400",
+    quote:
+      "The classes are interactive, and I feel confident singing now. I look forward to every session.",
+    achievement: "Performed in her first live recital",
   },
   {
-    id: 6,
-    name: "James Parker",
-    role: "Teenage Student",
+    id: 3,
+    name: "Arjun Nair",
+    role: "Beginner Guitarist",
+    course: "Complete Musician Package",
+    rating: 5,
+    instrument: Guitar,
+    color: "from-green-500 to-emerald-400",
+    quote:
+      "The team made learning guitar fun from day one. Within weeks I was playing full songs instead of just chords.",
+    achievement: "Won his school music competition",
+  },
+  {
+    id: 4,
+    name: "Neha Kapoor",
+    role: "Singer-Songwriter",
+    course: "Vocal Excellence Program",
+    rating: 5,
+    instrument: Mic,
+    color: "from-purple-500 to-indigo-400",
+    quote:
+      "I not only improved my vocals but also learned stage presence. The instructors encouraged me to write and perform my own songs.",
+    achievement: "Released her first original single",
+  },
+  {
+    id: 5,
+    name: "Kabir Singh",
+    role: "Teen Drummer & Music Enthusiast",
     course: "Complete Musician Package",
     rating: 5,
     instrument: Music,
-    color: "from-rose-500 to-pink-400",
-    quote: "Learning with the Melody Workshop team has been fun and engaging. I love how lessons include songs I actually want to play.",
-    achievement: "School talent show winner",
-  }
+    color: "from-blue-500 to-cyan-400",
+    quote:
+      "Melody Workshop gave me the confidence to collaborate with other musicians and perform live. Every session pushes me forward.",
+    achievement: "Formed a school rock band",
+  },
 ];
 
 export default function Testimonials() {
@@ -88,7 +82,7 @@ export default function Testimonials() {
     <section id="testimonials" className="section-padding bg-background">
       <div className="container-musical text-center">
         <h2 className="font-musical text-4xl md:text-5xl font-bold mb-4">
-          Student <span className="text-gradient-musical">Success Stories</span>
+          Student Success Stories
         </h2>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
           Hear from students who improved their musical journey with the Melody Workshop team

@@ -100,7 +100,7 @@ const Blog = () => {
     <section id="blog" className="section-padding bg-background">
       <div className="container-musical text-center">
         <h2 className="font-musical text-4xl md:text-5xl font-bold mb-4">
-          Music <span className="text-gradient-musical">Blog</span>
+          Music Blog
         </h2>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
           Tips, techniques, and insights from the Melody Workshop team

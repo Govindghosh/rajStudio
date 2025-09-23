@@ -6,83 +6,102 @@ const Courses = () => {
   const courses = [
     {
       id: 1,
-      title: "Guitar Mastery Course",
-      description: "Complete guitar program from beginner to advanced level",
+      title: "Acoustic Guitar",
+      description: "From your first chord to confidently playing songs with strumming, fingerpicking, rhythm, and melody.",
       icon: Guitar,
-      price: 149,
-      originalPrice: 199,
-      duration: "12 weeks",
-      students: "250+",
+      price: 4000,
+      originalPrice: 4000,
+      duration: "Ongoing (Monthly)",
+      students: "120+",
       rating: 4.9,
-      level: "All Levels",
+      level: "Beginner & Intermediate",
       featured: true,
       features: [
-        "Acoustic & Electric Guitar Techniques",
-        "Music Theory & Chord Progressions",
-        "Fingerpicking & Strumming Patterns",
-        "Song Performance & Composition",
-        "Recording & Production Basics",
-        "Live Performance Preparation"
+        "Strumming & Fingerpicking",
+        "Rhythm & Melody Practice",
+        "Song Performance Training",
+        "Music Theory Basics"
       ],
       highlights: [
-        "1-on-1 Personal Sessions",
-        "Weekly Group Practice",
-        "Performance Opportunities",
-        "Lifetime Access to Materials"
+        "Personalized Guidance",
+        "Weekly Group Jams",
+        "Stage Performance Support",
+        "Lifetime Materials Access"
       ]
     },
     {
       id: 2,
-      title: "Vocal Excellence Program",
-      description: "Professional vocal training for all singing styles",
-      icon: Mic,
-      price: 129,
-      originalPrice: 179,
-      duration: "10 weeks",
-      students: "180+",
+      title: "Electric Guitar",
+      description: "Learn riffs, scales, soloing, and rock/pop techniques with precision and stage confidence.",
+      icon: Guitar,
+      price: 4000,
+      originalPrice: 4000,
+      duration: "Ongoing (Monthly)",
+      students: "90+",
       rating: 4.8,
-      level: "Beginner to Pro",
+      level: "Intermediate to Advanced",
       featured: false,
       features: [
-        "Breath Control & Vocal Technique",
-        "Pitch Accuracy & Tone Development",
-        "Style Versatility (Pop, Rock, Classical)",
-        "Stage Presence & Performance",
-        "Microphone Technique",
-        "Recording Studio Sessions"
+        "Lead Guitar Techniques",
+        "Scales & Improvisation",
+        "Rock & Pop Styles",
+        "Stage Presence Coaching"
       ],
       highlights: [
-        "Personalized Vocal Coaching",
-        "Studio Recording Experience",
-        "Performance Showcase Events",
-        "Professional Feedback Sessions"
+        "Solo Performance Training",
+        "Band Collaboration Practice",
+        "Recording Guidance",
+        "Performance Events"
       ]
     },
     {
       id: 3,
-      title: "Complete Musician Package",
-      description: "Combined guitar and vocal training for complete musicianship",
-      icon: Star,
-      price: 249,
-      originalPrice: 349,
-      duration: "16 weeks",
-      students: "100+",
+      title: "Western Vocals",
+      description: "Develop your voice with pitch, breathing, vocal strength, and performance techniques across genres.",
+      icon: Mic,
+      price: 4000,
+      originalPrice: 4000,
+      duration: "Ongoing (Monthly)",
+      students: "150+",
       rating: 5.0,
       level: "All Levels",
       featured: true,
       features: [
-        "All Guitar Course Content",
-        "All Vocal Course Content",
-        "Song Arrangement & Composition",
-        "Music Production Introduction",
+        "Breath Control & Vocal Strength",
+        "Pitch Accuracy Training",
+        "Genre Versatility (Pop, Rock, Classical)",
+        "Stage Confidence & Expression"
+      ],
+      highlights: [
+        "1-on-1 Vocal Coaching",
+        "Performance Showcases",
+        "Studio Recording Practice",
+        "Professional Feedback"
+      ]
+    },
+    {
+      id: 4,
+      title: "Any 2 Courses (Combo)",
+      description: "Enroll in any 2 courses of your choice with 10% OFF and become a versatile musician.",
+      icon: Star,
+      price: 7200,
+      originalPrice: 8000,
+      duration: "Ongoing (Monthly)",
+      students: "60+",
+      rating: 5.0,
+      level: "All Levels",
+      featured: true,
+      features: [
+        "All Content from 2 Courses",
+        "Songwriting & Arrangement",
         "Performance Psychology",
         "Music Business Basics"
       ],
       highlights: [
-        "Most Comprehensive Training",
-        "Priority Booking & Support",
-        "Professional Portfolio Creation",
-        "Career Guidance & Mentorship"
+        "Biggest Savings (10% OFF)",
+        "Career Mentorship",
+        "Priority Sessions",
+        "Portfolio Building"
       ]
     }
   ];
@@ -97,7 +116,7 @@ const Courses = () => {
         {course.featured && (
           <div className="absolute -top-2 -right-2">
             <Badge className="bg-musical-gold text-white px-3 py-1">
-              Most Popular
+              Popular
             </Badge>
           </div>
         )}
@@ -107,7 +126,8 @@ const Courses = () => {
           <div className={`w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center ${
             index === 0 ? 'bg-gradient-to-r from-musical-gold to-orange-400' :
             index === 1 ? 'bg-gradient-to-r from-musical-blue to-cyan-400' :
-            'bg-gradient-to-r from-musical-purple to-pink-400'
+            index === 2 ? 'bg-gradient-to-r from-musical-purple to-pink-400' :
+            'bg-gradient-to-r from-green-500 to-emerald-400'
           }`}>
             <IconComponent className="h-8 w-8 text-white" />
           </div>
@@ -119,12 +139,16 @@ const Courses = () => {
         {/* Pricing */}
         <div className="text-center mb-6">
           <div className="flex items-center justify-center space-x-2 mb-2">
-            <span className="text-3xl font-bold text-gradient-musical">${course.price}</span>
-            <span className="text-lg text-muted-foreground line-through">${course.originalPrice}</span>
+            <span className="text-3xl font-bold text-gradient-musical">₹{course.price}</span>
+            {course.originalPrice !== course.price && (
+              <span className="text-lg text-muted-foreground line-through">₹{course.originalPrice}</span>
+            )}
           </div>
-          <Badge variant="outline" className="text-green-600 border-green-600">
-            Save ${course.originalPrice - course.price}
-          </Badge>
+          {course.originalPrice !== course.price && (
+            <Badge variant="outline" className="text-green-600 border-green-600">
+              Save ₹{course.originalPrice - course.price}
+            </Badge>
+          )}
         </div>
 
         {/* Course Info */}
@@ -172,14 +196,34 @@ const Courses = () => {
           </div>
         </div>
 
-        {/* CTA */}
+        {/* CTA with WhatsApp Integration */}
         <div className="space-y-3">
-          <Button className={`w-full ${course.featured ? 'btn-hero' : 'btn-secondary-musical'}`}>
-            <span>Enroll Now</span>
-            <ArrowRight className="ml-2 h-4 w-4" />
+          <Button
+            asChild
+            className={`w-full ${course.featured ? 'btn-hero' : 'btn-secondary-musical'}`}
+          >
+            <a
+              href={`https://wa.me/918791217050?text=Hi! I’m interested in the ${course.title}. Please share more details.`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Enroll Now</span>
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
           </Button>
-          <Button variant="outline" className="w-full">
-            Free Trial Lesson
+
+          <Button
+            variant="outline"
+            asChild
+            className="w-full"
+          >
+            <a
+              href="https://wa.me/918791217050?text=Hi! I’d like to book a free trial lesson."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Free Trial Lesson
+            </a>
           </Button>
         </div>
       </div>
@@ -192,10 +236,10 @@ const Courses = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-musical text-4xl md:text-5xl font-bold mb-4">
-            Music <span className="text-gradient-musical">Courses</span>
+            Our Courses
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Choose from our comprehensive music programs designed to take you from beginner to professional level
+            Choose from our guitar and vocal programs — designed to take you from beginner to professional level.
           </p>
           
           {/* Trust Indicators */}
@@ -220,81 +264,6 @@ const Courses = () => {
           {courses.map((course, index) => (
             <CourseCard key={course.id} course={course} index={index} />
           ))}
-        </div>
-
-        {/* Additional Information */}
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="card-musical p-8">
-            <h3 className="font-musical text-2xl font-bold mb-4 text-gradient-musical">
-              Flexible Learning Options
-            </h3>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-musical-gold rounded-full flex items-center justify-center flex-shrink-0">
-                  <Clock className="h-4 w-4 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-semibold">Flexible Scheduling</h4>
-                  <p className="text-sm text-muted-foreground">Choose lesson times that work with your schedule</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-musical-blue rounded-full flex items-center justify-center flex-shrink-0">
-                  <Users className="h-4 w-4 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-semibold">Online & In-Person</h4>
-                  <p className="text-sm text-muted-foreground">Learn from home or in our professional studio</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-musical-purple rounded-full flex items-center justify-center flex-shrink-0">
-                  <Star className="h-4 w-4 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-semibold">Personalized Approach</h4>
-                  <p className="text-sm text-muted-foreground">Tailored curriculum based on your goals and preferences</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="card-musical p-8">
-            <h3 className="font-musical text-2xl font-bold mb-4 text-gradient-musical">
-              What Students Say
-            </h3>
-            <div className="space-y-4">
-              <div className="border-l-4 border-musical-gold pl-4">
-                <p className="text-sm italic mb-2">
-                  "Raj's teaching method is incredible. I went from never touching a guitar to performing at open mic nights in just 3 months!"
-                </p>
-                <div className="flex items-center space-x-2">
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-3 w-3 text-musical-gold fill-current" />
-                    ))}
-                  </div>
-                  <span className="text-xs text-muted-foreground">- Sarah M.</span>
-                </div>
-              </div>
-              
-              <div className="border-l-4 border-musical-blue pl-4">
-                <p className="text-sm italic mb-2">
-                  "The vocal training transformed my singing completely. I now perform professionally at local venues."
-                </p>
-                <div className="flex items-center space-x-2">
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-3 w-3 text-musical-gold fill-current" />
-                    ))}
-                  </div>
-                  <span className="text-xs text-muted-foreground">- Mike R.</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

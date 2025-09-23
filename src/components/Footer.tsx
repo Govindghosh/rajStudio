@@ -59,36 +59,38 @@ const Footer = () => {
         <div className="space-y-4">
           <a href="/">
             <div className="flex items-center space-x-2">
-              <div className="p-2 bg-primary rounded-lg">
+              <div className="p-2 rounded-lg bg-[#F9F8F6] dark:bg-primary transition-colors duration-300">
                 <img
                   src="/favicon.ico"
                   alt="Melody Workshop Logo"
                   className="h-6 w-6 object-contain"
                 />
               </div>
-              <div className="font-musical text-xl font-bold text-gradient-musical">
+              <div className="font-musical text-xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
                 Melody Workshop
               </div>
             </div>
           </a>
-          <p className="text-sm text-muted-foreground">
-            Passionate guitarists and vocal coaches guiding students on their
-            musical journey.
+
+          <p className="text-sm text-muted-foreground dark:text-gray-300 transition-colors duration-300">
+            From First Chord to First Performance
           </p>
-          <div className="space-y-1 text-sm text-muted-foreground">
+
+          <div className="space-y-1 text-sm text-muted-foreground dark:text-gray-300 transition-colors duration-300">
             <div className="flex items-center space-x-2">
-              <Phone className="h-4 w-4 text-musical-gold" />{" "}
-              <span>+1 (555) 123-4567</span>
+              <Phone className="h-4 w-4 text-musical-gold" />
+              <span>+91 87912 17050</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Mail className="h-4 w-4 text-musical-blue" />{" "}
+              <Mail className="h-4 w-4 text-musical-blue" />
               <span>info@melodyworkshop.com</span>
             </div>
             <div className="flex items-center space-x-2">
-              <MapPin className="h-4 w-4 text-musical-purple" />{" "}
-              <span>123 Music Street, Downtown</span>
+              <MapPin className="h-4 w-4 text-musical-purple" />
+              <span>Noida</span>
             </div>
           </div>
+
           <div className="flex space-x-3 mt-2">
             {socialLinks.map((social) => {
               const Icon = social.icon;
@@ -96,7 +98,7 @@ const Footer = () => {
                 <a
                   key={social.name}
                   href={social.href}
-                  className={`p-2 bg-muted rounded-lg transition ${social.color}`}
+                  className={`p-2 rounded-lg bg-muted hover:bg-[#e6e5e2] dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-300 ${social.color}`}
                 >
                   <Icon className="h-5 w-5" />
                 </a>
@@ -107,10 +109,11 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div className="space-y-4">
-          <h4 className="font-musical text-xl font-bold text-gradient-musical">
-            Quick Links
-          </h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
+<h4 className="font-musical text-xl font-bold">
+  Quick Links
+</h4>
+
+          <ul className="space-y-2 text-sm text-gray-900 dark:text-white">
             {quickLinks.map((link) => (
               <li key={link.name}>
                 <a
@@ -126,10 +129,10 @@ const Footer = () => {
 
         {/* Services */}
         <div className="space-y-4">
-          <h4 className="font-musical text-xl font-bold text-gradient-musical">
+          <h4 className="font-musical text-xl font-bold ">
             Services
           </h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
+          <ul className="space-y-2 text-sm text-gray-900 dark:text-white">
             {services.map((service) => {
               const Icon = service.icon;
               return (
@@ -144,23 +147,22 @@ const Footer = () => {
 
         {/* Newsletter */}
         <div className="space-y-4">
-          <h4 className="font-musical text-xl font-bold text-gradient-musical">
+          <h4 className="font-musical text-xl font-bold ">
             Stay Connected
           </h4>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-gray-900 dark:text-white">
             Weekly music tips, lesson updates, and performance announcements.
           </p>
           <div className="flex flex-col space-y-2 w-full">
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full px-4 py-2 rounded-lg border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-musical-gold"
+              className="w-full px-4 py-2 rounded-lg border border-border bg-background text-sm dark:text-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-musical-gold"
             />
             <Button className="w-full btn-hero">Subscribe</Button>
           </div>
         </div>
       </div>
-
       {/* Bottom Bar */}
       <div className="border-t border-border">
         <div className="container-musical py-6 flex flex-col md:flex-row flex-wrap items-center justify-between space-y-4 md:space-y-0 text-sm text-muted-foreground">

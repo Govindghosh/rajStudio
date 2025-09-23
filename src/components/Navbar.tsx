@@ -67,18 +67,27 @@ const Navbar = () => {
           {/* Logo */}
           <a href="/">
             <div className="flex items-center space-x-2">
-              <div className="p-2 bg-primary rounded-lg">
+              <div
+                className={`p-2 rounded-lg transition-colors duration-300 ${
+                  isDark ? "bg-primary" : "bg-[#F9F8F6]"
+                }`}
+              >
                 <img
                   src="/favicon.ico"
                   alt="Melody Workshop Logo"
                   className="h-6 w-6 object-contain"
                 />
               </div>
-              <div className="font-musical text-xl font-bold text-gradient-musical">
+              <div
+                className={`font-musical text-xl font-bold transition-colors duration-300 ${
+                  isDark ? "text-white" : "text-gray-900"
+                }`}
+              >
                 Melody Workshop
               </div>
             </div>
           </a>
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (

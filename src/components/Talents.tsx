@@ -25,7 +25,7 @@ const InstrumentProficiency = () => {
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
     {/* Section Header */}
     <h2 className="font-musical text-4xl md:text-5xl font-bold mb-12">
-      Instrument <span className="text-gradient-musical">Proficiency</span>
+      Instrument Proficiency
     </h2>
 
     {/* Instruments Grid */}

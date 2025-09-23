@@ -5,17 +5,6 @@ import heroImage from "@/assets/hero-performance.jpg";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 
 const Hero = () => {
-  const words = [
-    {
-      text: "Melody",
-      className: "text-text-white dark:text-white",
-    },
-
-    {
-      text: "Workshop",
-      className: "text-[#FACC15] dark:text-[#FACC15]",
-    },
-  ];
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
@@ -38,7 +27,7 @@ const Hero = () => {
 
         {/* Heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-center">
-          Learn Guitar & Vocal Music with the Melody Workshop
+          Learn. Play. Perform. Your Musical Journey Starts Here.
           <div className="flex justify-center">
             {/* <TypewriterEffectSmooth words={words} /> */}
           </div>
@@ -46,9 +35,9 @@ const Hero = () => {
 
         {/* Subheading */}
         <p className="text-white/90 text-base sm:text-lg md:text-xl mb-8 leading-relaxed">
-          Personalized lessons from experienced instructors.
+          At Melody Workshop, we help you master Guitar & Vocals with
           <br className="hidden sm:block" />
-          Unlock your musical potential with the Melody Workshop.
+          expert guidance, structured lessons, and fun learning experiences.
         </p>
 
         {/* Call-to-Action */}
