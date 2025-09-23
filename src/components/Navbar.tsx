@@ -1,11 +1,17 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Music, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+  
+  const handleBookTrial = () => {
+    navigate("/contact");
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -123,7 +129,16 @@ const Navbar = () => {
 
             {/* CTA Button */}
             <div className="hidden sm:block">
-              <Button className="btn-hero">Book Free Trial</Button>
+              <Button 
+                onClick={handleBookTrial}
+                className={`font-medium text-white px-4 py-2 rounded-md transition-colors ${
+                  isDark
+                    ? "bg-musical-gold hover:bg-yellow-500 text-black" // dark mode styling
+                    : "bg-musical-blue hover:bg-blue-600 text-white" // light mode styling
+                }`}
+              >
+                Book Free Trial
+              </Button>
             </div>
 
             {/* Mobile menu button */}
@@ -158,6 +173,7 @@ const Navbar = () => {
               ))}
               <div className="px-3 py-2">
                 <Button
+                  onClick={handleBookTrial}
                   className={`w-full font-medium text-white px-4 py-2 rounded-md transition-colors ${
                     isDark
                       ? "bg-musical-gold hover:bg-yellow-500 text-black" // dark mode styling

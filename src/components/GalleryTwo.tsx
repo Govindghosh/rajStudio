@@ -3,6 +3,7 @@ import { Play, ExternalLink, Calendar, MapPin, Users, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+
 const Gallery = () => {
   const [selectedItem, setSelectedItem] = useState<any>(null);
   const [activeFilter, setActiveFilter] = useState("all");
@@ -21,14 +22,6 @@ const Gallery = () => {
       tags: ["Live Performance", "Guitar", "Concert"],
     },
   ];
-
-  // const filters = [
-  //   { id: 'all', label: 'All', count: galleryItems.length },
-  //   { id: 'performance', label: 'Performances', count: galleryItems.filter(item => item.category === 'performance').length },
-  //   { id: 'lesson', label: 'Lessons', count: galleryItems.filter(item => item.category === 'lesson').length },
-  //   { id: 'students', label: 'Students', count: galleryItems.filter(item => item.category === 'students').length },
-  //   { id: 'studio', label: 'Studio', count: galleryItems.filter(item => item.category === 'studio').length }
-  // ];
 
   const filteredItems =
     activeFilter === "all"
@@ -187,31 +180,33 @@ const Gallery = () => {
               </div>
             </div>
           ))}
+          
           {/* YouTube Channel CTA */}
-<div className="flex-1">
-  <div className="card-musical p-8 h-full flex flex-col justify-between">
-    <h3 className="font-musical text-2xl font-bold mb-4 text-gradient-musical">
-      More Content on YouTube
-    </h3>
-    <p className="text-muted-foreground mb-6">
-      Subscribe to my YouTube channel for regular tutorials,
-      performances, and music tips
-    </p>
-    <div className="flex flex-col sm:flex-row gap-4 justify-center mt-auto">
-      <Button className="btn-hero">
-        <Play className="mr-2 h-4 w-4" />
-        Subscribe to Channel
-      </Button>
-<Link to="/gallary">
-  <Button variant="outline" className="flex items-center">
-    <ExternalLink className="mr-2 h-4 w-4" />
-    View All Videos
-  </Button>
-</Link>
-    </div>
-  </div>
-</div>
+          <div className="flex-1">
+            <div className="card-musical p-8 h-full flex flex-col justify-between">
+              <h3 className="font-musical text-2xl font-bold mb-4 text-gradient-musical">
+                More Content on YouTube
+              </h3>
+              <p className="text-muted-foreground mb-6">
+                Subscribe to my YouTube channel for regular tutorials,
+                performances, and music tips
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-auto">
+                <Button className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-yellow-500 transition">
+                  <Play className="h-4 w-4" />
+                  Subscribe to Channel
+                </Button>
+                <Link to="/gallery"> {/* Fixed typo: /gallary → /gallery */}
+                  <Button variant="outline" className="flex items-center">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    View All Videos
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
+
         {/* Modal */}
         {selectedItem && (
           <Modal item={selectedItem} onClose={() => setSelectedItem(null)} />

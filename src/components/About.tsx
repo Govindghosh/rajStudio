@@ -13,7 +13,7 @@ const About = () => {
   const highlights = [
     { icon: Users, number: "200+", label: "Students Trained" },
     { icon: Clock, number: "10+", label: "Years Experience" },
-    { icon: Award, number: "50+", label: "Certifications" },
+    { icon: Award, number: "Professional", label: "Certified Teacher" },
     { icon: Music, number: "1000+", label: "Lessons Delivered" },
   ];
 

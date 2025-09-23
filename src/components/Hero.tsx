@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import { Play, Guitar, Mic, Star, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-performance.jpg";
-import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
-
+  const navigate = useNavigate();
+  const handleBookTrial = () => {
+    navigate("/contact");
+  }
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
       {/* Background */}
@@ -42,7 +45,7 @@ const Hero = () => {
 
         {/* Call-to-Action */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-          <Button className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-yellow-500 transition">
+          <Button onClick={handleBookTrial} className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-yellow-500 transition">
             <span>Book a Free Trial</span>
             <ArrowRight className="h-4 w-4" />
           </Button>

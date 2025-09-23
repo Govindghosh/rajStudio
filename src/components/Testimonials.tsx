@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Star, Quote, Music, Guitar, Mic } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const testimonials = [
   {
@@ -12,7 +13,7 @@ const testimonials = [
     instrument: Guitar,
     color: "from-orange-400 to-amber-500",
     quote:
-      "I never thought I’d be able to play guitar so quickly. The lessons are clear and motivating!",
+      "I never thought I'd be able to play guitar so quickly. The lessons are clear and motivating!",
     achievement: "Plays acoustic sets at college events",
   },
   {
@@ -67,6 +68,11 @@ const testimonials = [
 
 export default function Testimonials() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
+
+  const handleBookTrial = () => {
+    navigate("/contact");
+  };
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % testimonials.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
@@ -129,23 +135,47 @@ export default function Testimonials() {
 
           <div className="flex justify-center mt-6 space-x-2">
             {testimonials.map((_, idx) => (
-              <button key={idx} onClick={() => setCurrentSlide(idx)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${idx===currentSlide ? 'bg-musical-gold w-8' : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'}`} />
+              <button 
+                key={idx} 
+                onClick={() => setCurrentSlide(idx)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${idx===currentSlide ? 'bg-musical-gold w-8' : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'}`} 
+              />
             ))}
           </div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-          <div className="text-center"><div className="text-3xl font-bold text-gradient-musical mb-1">200+</div><div className="text-sm text-muted-foreground">Happy Students</div></div>
-          <div className="text-center"><div className="text-3xl font-bold text-gradient-musical mb-1">4.9/5</div><div className="text-sm text-muted-foreground">Average Rating</div></div>
-          <div className="text-center"><div className="text-3xl font-bold text-gradient-musical mb-1">95%</div><div className="text-sm text-muted-foreground">Success Rate</div></div>
-          <div className="text-center"><div className="text-3xl font-bold text-gradient-musical mb-1">10+</div><div className="text-sm text-muted-foreground">Years Teaching</div></div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-gradient-musical mb-1">200+</div>
+            <div className="text-sm text-muted-foreground">Happy Students</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-gradient-musical mb-1">4.9/5</div>
+            <div className="text-sm text-muted-foreground">Average Rating</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-gradient-musical mb-1">95%</div>
+            <div className="text-sm text-muted-foreground">Success Rate</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-gradient-musical mb-1">10+</div>
+            <div className="text-sm text-muted-foreground">Years Teaching</div>
+          </div>
         </div>
 
         <div className="card-musical p-8 max-w-xl mx-auto text-center">
-          <h3 className="font-musical text-2xl font-bold mb-3 text-gradient-musical">Ready to Start Your Musical Journey?</h3>
-          <p className="text-muted-foreground mb-4">Join hundreds of students who have transformed their abilities with the Melody Workshop team</p>
-          <Button className="btn-hero">Book Your Free Trial Lesson</Button>
+          <h3 className="font-musical text-2xl font-bold mb-3 text-gradient-musical">
+            Ready to Start Your Musical Journey?
+          </h3>
+          <p className="text-muted-foreground mb-4">
+            Join hundreds of students who have transformed their abilities with the Melody Workshop team
+          </p>
+          <Button 
+            onClick={handleBookTrial}
+            className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-yellow-500 transition mx-auto"
+          >
+            Book Your Free Trial Lesson
+          </Button>
         </div>
       </div>
     </section>

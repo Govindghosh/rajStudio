@@ -11,12 +11,29 @@ import {
   Mic,
   Heart,
   Users,
+  CheckCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      // Here you would typically send the email to your backend
+      console.log("Subscribed with email:", email);
+      setIsSubscribed(true);
+      setEmail("");
+      // Reset subscription status after 3 seconds
+      setTimeout(() => setIsSubscribed(false), 3000);
+    }
+  };
+
   const quickLinks = [
-    { name: "Home", href: "#home" },
+    { name: "Home", href: "/" },
     { name: "About", href: "#about" },
     { name: "Courses", href: "/course" },
     { name: "Gallery", href: "#gallery" },
@@ -30,7 +47,7 @@ const Footer = () => {
     { name: "Guitar Lessons", icon: Guitar },
     { name: "Vocal Training", icon: Mic },
     { name: "Music Theory", icon: Music },
-    { name: "Online Lessons", icon: Music },
+    { name: "Online Lessons", icon: Users },
   ];
 
   const socialLinks = [
@@ -53,7 +70,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-background border-t border-border m-2">
+    <footer className="bg-background border-t border-border">
       <div className="container-musical py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Brand & Contact */}
         <div className="space-y-4">
@@ -99,6 +116,7 @@ const Footer = () => {
                   key={social.name}
                   href={social.href}
                   className={`p-2 rounded-lg bg-muted hover:bg-[#e6e5e2] dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-300 ${social.color}`}
+                  aria-label={`Follow us on ${social.name}`}
                 >
                   <Icon className="h-5 w-5" />
                 </a>
@@ -109,16 +127,15 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div className="space-y-4">
-<h4 className="font-musical text-xl font-bold">
-  Quick Links
-</h4>
-
-          <ul className="space-y-2 text-sm text-gray-900 dark:text-white">
+          <h4 className="font-musical text-xl font-bold text-gray-900 dark:text-white">
+            Quick Links
+          </h4>
+          <ul className="space-y-2 text-sm">
             {quickLinks.map((link) => (
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className="hover:text-primary transition-colors"
+                  className="text-gray-900 dark:text-white hover:text-primary transition-colors"
                 >
                   {link.name}
                 </a>
@@ -129,16 +146,16 @@ const Footer = () => {
 
         {/* Services */}
         <div className="space-y-4">
-          <h4 className="font-musical text-xl font-bold ">
+          <h4 className="font-musical text-xl font-bold text-gray-900 dark:text-white">
             Services
           </h4>
-          <ul className="space-y-2 text-sm text-gray-900 dark:text-white">
+          <ul className="space-y-2 text-sm">
             {services.map((service) => {
               const Icon = service.icon;
               return (
                 <li key={service.name} className="flex items-center space-x-2">
                   <Icon className="h-4 w-4 text-musical-gold" />
-                  <span>{service.name}</span>
+                  <span className="text-gray-900 dark:text-white">{service.name}</span>
                 </li>
               );
             })}
@@ -147,39 +164,67 @@ const Footer = () => {
 
         {/* Newsletter */}
         <div className="space-y-4">
-          <h4 className="font-musical text-xl font-bold ">
+          <h4 className="font-musical text-xl font-bold text-gray-900 dark:text-white">
             Stay Connected
           </h4>
           <p className="text-sm text-gray-900 dark:text-white">
             Weekly music tips, lesson updates, and performance announcements.
           </p>
-          <div className="flex flex-col space-y-2 w-full">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full px-4 py-2 rounded-lg border border-border bg-background text-sm dark:text-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-musical-gold"
-            />
-            <Button className="w-full btn-hero">Subscribe</Button>
-          </div>
+<form onSubmit={handleSubscribe} className="flex flex-col space-y-2 w-full">
+  <input
+    type="email"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    placeholder="Enter your email"
+    className="w-full px-4 py-2 rounded-lg border border-border bg-background text-sm text-gray-900 dark:text-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-musical-gold"
+    required
+  />
+  <Button 
+    type="submit"
+    className="w-full bg-yellow-400 text-gray-900 px-6 py-2 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-yellow-500 transition"
+    disabled={isSubscribed}
+  >
+    {isSubscribed ? (
+      <>
+        <CheckCircle className="h-4 w-4" />
+        Subscribed!
+      </>
+    ) : (
+      "Subscribe"
+    )}
+  </Button>
+  {isSubscribed && (
+    <p className="text-green-600 text-sm text-center flex items-center justify-center gap-1">
+      <CheckCircle className="h-4 w-4" />
+      Thank you! We'll contact you soon.
+    </p>
+  )}
+  <p className="text-xs text-gray-500 text-center mt-1">
+    We'll manually add you to our newsletter list
+  </p>
+</form>
         </div>
       </div>
+
       {/* Bottom Bar */}
       <div className="border-t border-border">
         <div className="container-musical py-6 flex flex-col md:flex-row flex-wrap items-center justify-between space-y-4 md:space-y-0 text-sm text-muted-foreground">
-          <span>© {currentYear} Melody Workshop. All rights reserved.</span>
-          <div className="flex items-center space-x-1">
+          <span className="text-gray-900 dark:text-white">
+            © {currentYear} Melody Workshop. All rights reserved.
+          </span>
+          <div className="flex items-center space-x-1 text-gray-900 dark:text-white">
             <span>Made with</span>
             <Heart className="h-4 w-4 text-red-500 fill-current" />
             <span>for music lovers</span>
           </div>
           <div className="flex flex-wrap space-x-4">
-            <a href="#" className="hover:text-primary transition-colors">
+            <a href="#" className="text-gray-900 dark:text-white hover:text-primary transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-primary transition-colors">
+            <a href="#" className="text-gray-900 dark:text-white hover:text-primary transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="hover:text-primary transition-colors">
+            <a href="#" className="text-gray-900 dark:text-white hover:text-primary transition-colors">
               Cookie Policy
             </a>
           </div>
