@@ -90,7 +90,7 @@ const Footer = () => {
           </a>
 
           <p className="text-sm text-muted-foreground dark:text-gray-300 transition-colors duration-300">
-            From First Chord to First Performance
+            From beginner chords to confident vocals, Melody Workshop brings expert online training right to your home.
           </p>
 
           <div className="space-y-1 text-sm text-muted-foreground dark:text-gray-300 transition-colors duration-300">
