@@ -154,8 +154,8 @@ I'm excited to start my musical journey! Please contact me to schedule my free t
   const experienceLevels = [
     { value: 'complete-beginner', label: 'Complete Beginner (Starting from scratch)' },
     { value: 'basic-knowledge', label: 'Basic Knowledge (Few months experience)' },
-    { value: 'some-experience', label: 'Some Experience (1-2 years of practice)' },
-    { value: 'intermediate', label: 'Intermediate (3-5 years of playing)' },
+    { value: 'some-experience', label: 'Some Experience' },
+    { value: 'intermediate', label: 'Intermediate' },
   ];
 
   return (

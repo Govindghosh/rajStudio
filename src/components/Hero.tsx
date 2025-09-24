@@ -30,7 +30,7 @@ const Hero = () => {
 
         {/* Heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-center">
-          Learn. Play. Perform. Your Musical Journey Starts Here.
+          Learn Play Perform Your Musical Journey Starts Here.
           <div className="flex justify-center">
             {/* <TypewriterEffectSmooth words={words} /> */}
           </div>
@@ -46,7 +46,7 @@ const Hero = () => {
         {/* Call-to-Action */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
           <Button onClick={handleBookTrial} className="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-yellow-500 transition">
-            <span>Book a Free Trial</span>
+            <span>Book first free class</span>
             <ArrowRight className="h-4 w-4" />
           </Button>
           <Button className="bg-white/10 backdrop-blur-md text-white px-6 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-white/20 transition">
